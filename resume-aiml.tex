@@ -1,0 +1,56 @@
+\documentclass{cv_template}
+
+% Candidate Profile & Tagline
+\name{Sumit Verma}
+\tagline{AI/ML Engineer | Generative AI | Computer Vision}
+
+% Set-and-Forget Links: Automatically fetches from links/
+\email
+\linkedin
+\github
+\location
+
+\begin{document}
+\begin{fitpage}
+
+    % Render Header
+    \makecvheader
+
+    % --- Professional Summary ---
+    \begin{cvsection}{Summary}
+        \import{sections/}{summary-aiml.tex}
+    \end{cvsection}
+
+    % --- Education ---
+    \begin{cvsection}{Education}
+        \import{sections/}{education.tex}
+    \end{cvsection}
+
+    % --- Technical Skills ---
+    \begin{cvsection}{Technical Skills}
+        \import{sections/skills/}{ml-skills.tex}
+        \import{sections/skills/}{genai-skills.tex}
+        \import{sections/skills/}{backend-skills.tex}
+        \import{sections/skills/}{programming-skills.tex}
+    \end{cvsection}
+
+    % --- Projects & Experience ---
+    \begin{cvsection}{Projects \& Experience}
+        \import{sections/projects/}{CodeGenie.tex}
+        \import{sections/projects/}{PresenceIQ.tex}
+        \import{sections/projects/}{Samyukt.tex}
+        \import{sections/projects/}{SyncSpace.tex}
+    \end{cvsection}
+
+    % --- Achievements ---
+    \begin{cvsection}{Achievements}
+        \import{sections/}{achievements.tex}
+    \end{cvsection}
+
+    % --- Certifications ---
+    \begin{cvsection}{Certifications}
+        \import{sections/}{certifications.tex}
+    \end{cvsection}
+
+\end{fitpage}
+\end{document}

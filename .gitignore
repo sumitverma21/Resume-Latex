@@ -11,5 +11,7 @@
 *.bbl
 *.blg
 
-# Keep the preview image
+# Keep the preview images
 !resume-preview.png
+!resume-aiml-preview.png
+!resume-swe-preview.png

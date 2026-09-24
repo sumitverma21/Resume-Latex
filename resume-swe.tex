@@ -1,0 +1,57 @@
+\documentclass{cv_template}
+
+% Candidate Profile & Tagline
+\name{Sumit Verma}
+\tagline{Software Engineer | Full-Stack \& Backend Systems}
+
+% Set-and-Forget Links: Automatically fetches from links/
+\email
+\linkedin
+\github
+\location
+
+\begin{document}
+\begin{fitpage}
+
+    % Render Header
+    \makecvheader
+
+    % --- Professional Summary ---
+    \begin{cvsection}{Summary}
+        \import{sections/}{summary-swe.tex}
+    \end{cvsection}
+
+    % --- Education ---
+    \begin{cvsection}{Education}
+        \import{sections/}{education.tex}
+    \end{cvsection}
+
+    % --- Technical Skills ---
+    \begin{cvsection}{Technical Skills}
+        \import{sections/skills/}{swe-languages.tex}
+        \import{sections/skills/}{swe-backend.tex}
+        \import{sections/skills/}{swe-frontend.tex}
+        \import{sections/skills/}{swe-database.tex}
+        \import{sections/skills/}{swe-core.tex}
+    \end{cvsection}
+
+    % --- Projects & Experience ---
+    \begin{cvsection}{Projects \& Experience}
+        \import{sections/projects/}{SyncSpace-swe.tex}
+        \import{sections/projects/}{Samyukt-swe.tex}
+        \import{sections/projects/}{HospitalMS.tex}
+        \import{sections/projects/}{CodeGenie-swe.tex}
+    \end{cvsection}
+
+    % --- Achievements ---
+    \begin{cvsection}{Achievements}
+        \import{sections/}{achievements-swe.tex}
+    \end{cvsection}
+
+    % --- Certifications ---
+    \begin{cvsection}{Certifications}
+        \import{sections/}{certifications.tex}
+    \end{cvsection}
+
+\end{fitpage}
+\end{document}
