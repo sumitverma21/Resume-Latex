@@ -7,7 +7,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cv_template}[2026/07/23 Modular Black & White Single-Page Resume Class]
 
-% Base Document Class: Letter size with 10pt base font
+% Base Document Class: A4 paper with 10pt base font
 \LoadClass[10pt, a4paper]{article}
 
 % --- Engine Detection & Font Setup ---
@@ -25,7 +25,7 @@
 \fi\fi
 
 % --- Core Utility & Formatting Packages ---
-\RequirePackage{geometry}       % Page margins and dimensions
+\RequirePackage[a4paper]{geometry} % Page margins and dimensions
 \RequirePackage{enumitem}       % Tight list item spacing control
 \RequirePackage{hyperref}       % Hyperlink support
 \RequirePackage{import}         % Modular file imports
@@ -39,8 +39,9 @@
 
 % --- Single-Page Geometry Parameters ---
 \geometry{
-    top=0.35in,
-    bottom=0.35in,
+    a4paper,
+    top=0.30in,
+    bottom=0.30in,
     left=0.45in,
     right=0.45in
 }
@@ -145,14 +146,14 @@
     \begin{center}
         {\Huge \bfseries \@cvname}\par
         \ifcsempty{@cvtagline}{}{%
-            \vspace{2pt}%
+            \vspace{1.5pt}%
             {\small \itshape \@cvtagline}\par
         }%
         \setbool{firstcontact}{true}%
         \def\printitem##1{%
             \ifbool{firstcontact}{\setbool{firstcontact}{false}}{\ \ \textbar\ \ }##1%
         }%
-        \vspace{3pt}%
+        \vspace{2.5pt}%
         {\footnotesize%
             \ifcsempty{@cvphone}{}{\printitem{\@cvphone}}%
             \ifcsempty{@cvemail}{}{\printitem{\href{mailto:\@cvemail}{\@cvemail}}}%
@@ -163,13 +164,14 @@
             \ifcsempty{@customcontacts}{}{\printitem{\@customcontacts}}%
         }\par
     \end{center}%
-    \vspace{2pt}%
+    \vspace{1pt}%
 }
 
 % --- Dynamic 1-Page Auto-Fitting Wrapper Environment ---
 \newenvironment{fitpage}{%
     \clearpage
-    \begin{adjustbox}{max totalheight=\textheight, max width=\textwidth, keepaspectratio}%
+    \noindent
+    \begin{adjustbox}{max totalheight=\textheight, max width=\textwidth, keepaspectratio, center=\textwidth}%
     \begin{minipage}{\textwidth}%
 }{%
     \end{minipage}%
@@ -178,23 +180,23 @@
 
 % --- Section Headings (Clean ATS Format) ---
 \newcommand{\cvsectionheader}[2][false]{%
-    \par\vspace{8pt}%
-    {\large \bfseries \MakeUppercase{#2}}\par\vspace{3pt}%
+    \par\vspace{5pt}%
+    {\large \bfseries \MakeUppercase{#2}}\par\vspace{2pt}%
 }
 
 \newenvironment{cvsection}[2][false]{%
     \cvsectionheader[#1]{#2}%
 }{%
-    \vspace{2pt}%
+    \vspace{1.5pt}%
 }
 
 % --- Bullet Item List ---
 \newenvironment{cvlist}{%
     \begin{itemize}[
         leftmargin=12pt,
-        itemsep=1pt,
+        itemsep=0.8pt,
         parsep=0pt,
-        topsep=1pt,
+        topsep=0.8pt,
         partopsep=0pt,
         label=\small\textbullet
     ]%
@@ -210,7 +212,7 @@
         \textbf{#1} & \textit{#4} \\
         \textit{#2} & \textit{#3} \\
     \end{tabular*}\par
-    \vspace{-2pt}%
+    \vspace{-1.5pt}%
     \begin{cvlist}%
 }{%
     \end{cvlist}%
@@ -232,12 +234,12 @@
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r @{}}
         \textbf{#1} & \textit{#2} \\
     \end{tabular*}\par
-    \vspace{-2pt}%
+    \vspace{-1.5pt}%
     \begin{cvlist}%
 }{%
     \end{cvlist}%
 }
 
 \newcommand{\cvskill}[2]{%
-    \noindent\textbf{#1:} #2\par\vspace{2pt}%
+    \noindent\textbf{#1:} #2\par\vspace{1.5pt}%
 }
