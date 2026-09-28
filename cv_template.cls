@@ -151,7 +151,7 @@
         }%
         \setbool{firstcontact}{true}%
         \def\printitem##1{%
-            \ifbool{firstcontact}{\setbool{firstcontact}{false}}{\ \ \textbar\ \ }##1%
+            \ifbool{firstcontact}{\setbool{firstcontact}{false}}{\ \textbar\ }##1%
         }%
         \vspace{2.5pt}%
         {\footnotesize%
