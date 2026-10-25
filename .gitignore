@@ -15,3 +15,7 @@
 !resume-preview.png
 !resume-aiml-preview.png
 !resume-swe-preview.png
+
+# OS artifacts
+.DS_Store
+*.DS_Store
